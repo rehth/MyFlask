@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+jinja2的继承、包含、宏
+{% endblock %}
+{% block body %}
+
+{{ super() }}
+
+子模板body <br>
+
+{% include 'include.html' ignore missing %}
+
+{% import 'macro.html' as func %}
+{{ func.input('测试：', value='macro') }}
+
+{% endblock %}

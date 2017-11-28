@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>flask模板语言测试</p>
+<p>{{ rule }}</p>
+{{ my_list }}<br>
+{{ my_name }}<br>
+{{ my_dict['name'] }}----{{ my_dict.age }}
+<br>
+<hr>
+{% for i in my_list if i > 3 %}
+    {{ loop.cycle('x', 'y', 'z') }}---{{ i }}<br>
+{% endfor %}
+{% for m in money -%}
+{#可以在循环的开始和结束位置放置一个
+- 号去除for循环不换行情况下产生的空格#}
+    {{ m }}
+{%- endfor %}
+
+<hr>
+<br>
+{{ my_list | sort }}
+<br>
+{{ money | reverse }}
+
+{% filter upper %}
+fsdfDGDFGD
+{% endfilter %}
+<br>
+{{ money | limit(0, 4) }}
+<br>
+{% if my_list | length %}
+    {{ my_list }}
+{% endif %}
+<br>
+{% import 'macro.html' as func %}
+{{ func.input(label='macro:') }}
+<br>
+{{ config.root_path }}
+<br>
+<a href="{{ url_for('code') }}">code</a>
+<br>
+flash测试：
+{{ get_flashed_messages() }}
+</body>
+</html>

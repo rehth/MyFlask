@@ -101,4 +101,13 @@ if __name__ == '__main__':
     User.query.paginate(2, 3, False).items
     """
 
+    """
+    get() 主键查询
+    filter  模糊查询
+    filter_by  精确查询
+    all()   查询所有
+    order_by()  排序
+    first()  第一个
+    paginate(page, limit, error)  分页查询数据
+    """
     app.run(debug=True, host='0.0.0.0')

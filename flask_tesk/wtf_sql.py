@@ -12,7 +12,7 @@ app = Flask(__name__)
 # Flask的数据库设置
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:mysql@127.0.0.1:3306/test_flask'
 # 查询时会显示原始SQL语句
-# app.config['SQLALCHEMY_ECHO'] = True
+app.config['SQLALCHEMY_ECHO'] = True
 # 动态追踪修改设置，如未设置只会提示警告
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # 关联应用

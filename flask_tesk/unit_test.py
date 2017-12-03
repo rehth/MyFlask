@@ -112,5 +112,3 @@ class MyFlaskDBTest(unittest.TestCase):
         author = Author.query.filter_by(name='zzz').first()
         self.assertIsNotNone(author, '数据添加失败')
         self.assertEqual(author.name, u'zzz', '添加错误')
-
-
